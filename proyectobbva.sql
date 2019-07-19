@@ -1,3 +1,5 @@
+use registrobbva1;
+
 create table usuario(
 	dni char(8) not null primary key,
     nombre varchar(50) not null,
