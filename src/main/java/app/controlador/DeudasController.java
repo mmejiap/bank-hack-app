@@ -17,7 +17,7 @@ import app.repositorios.RepositorioDeudas;
 
 @CrossOrigin
 @RestController
-@RequestMapping(path="/deudas")
+@RequestMapping("/deudas")
 
 public class DeudasController {
 	@Autowired
@@ -36,10 +36,10 @@ public class DeudasController {
 	@CrossOrigin
     @GetMapping(path="/listar")
 	@ResponseBody
-	public Iterable<Deudas> listarPermisos(@RequestParam String numDni) {
+	public Iterable<Deudas> listarDeudas(@RequestParam String numDni) {
         Iterable<Deudas> listaDeu = deudasrepo.findAll();
         ArrayList<Deudas> listDeudas = new ArrayList<Deudas>();
-     
+        System.out.println("--->numDni:"+numDni);
         for(Deudas p:listaDeu) {
         	if(p.getFdni()==numDni) {
         		listDeudas.add(p);
