@@ -17,7 +17,7 @@ import app.repositorios.RepositorioDeudas;
 
 @CrossOrigin
 @RestController
-@RequestMapping(path="/servicios")
+@RequestMapping(path="/deudas")
 
 public class DeudasController {
 	@Autowired
