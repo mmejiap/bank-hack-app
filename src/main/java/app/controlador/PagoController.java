@@ -68,7 +68,7 @@ public class PagoController {
         return "Modificado";
     }   
     @CrossOrigin
- 	@PostMapping(path="/procesar")
+ 	@GetMapping(path="/procesar")
  	public @ResponseBody String procesarPago(@RequestParam int ntarjeta) {
          Tarjeta p = pagotarjeta.findById(ntarjeta).get();	
      if(p.getNtarjeta()==null) {
