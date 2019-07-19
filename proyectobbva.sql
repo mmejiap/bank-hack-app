@@ -1,4 +1,4 @@
-create database registrobbva1;
+use registrobbva1;
 
 create table usuario(
 	dni char(8) not null primary key,
