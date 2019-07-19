@@ -73,9 +73,15 @@ public class PagoController {
 
         try { 
             Tarjeta p = pagotarjeta.findById(ntarjeta).get();	
+            System.out.println(p.getNtarjeta());
+
      if(p.getNtarjeta()==null) {
     	 return "No se encontro la tarjeta";    	 
-     }}catch(Exception e) {
+     }else {
+
+     }
+     
+        }catch(Exception e) {
        System.out.println(e.getMessage());
      }
       
