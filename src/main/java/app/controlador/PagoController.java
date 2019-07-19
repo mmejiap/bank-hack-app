@@ -69,11 +69,7 @@ public class PagoController {
     }   
     @CrossOrigin
  	@PostMapping(path="/procesar")
- 	public @ResponseBody String procesarPago(@RequestParam int ntarjeta,
- 			                                     @RequestParam String tipotarjeta,
- 		                                       	 @RequestParam String cvv,
- 			                                     @RequestParam String fdni,
- 			                                     @RequestParam String fechavencimiento) {
+ 	public @ResponseBody String procesarPago(@RequestParam int ntarjeta) {
          Tarjeta p = pagotarjeta.findById(ntarjeta).get();	
      if(p.getNtarjeta()==null) {
     	 return "No se encontro la tarjeta";    	 
