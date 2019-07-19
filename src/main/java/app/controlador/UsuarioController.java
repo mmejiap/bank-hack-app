@@ -26,7 +26,7 @@ public class UsuarioController {
 	private RepositorioUsuario usuarioRepo;
 	/////////////////////////////
 	@CrossOrigin
-	@GetMapping(path="/validaUsuario")
+	@GetMapping("/validaUsuario")
 	@ResponseBody
 	public int validaUsuario(@RequestParam String numDni,
 												@RequestParam String password
