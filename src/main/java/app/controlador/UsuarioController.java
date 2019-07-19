@@ -41,7 +41,7 @@ public class UsuarioController {
 
 		}
 		catch(Exception e){
-			return 0;
+			return "no";
 		}
 					
 	}
