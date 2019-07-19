@@ -1,10 +1,14 @@
+drop database registrobbva1;
+
+create database registrobbva1;
+
 use registrobbva1;
 
 create table usuario(
 	dni char(8) not null primary key,
     nombre varchar(50) not null,
     apellido varchar(50) not null,
-    dirección varchar(50),
+    direccion varchar(50),
     email varchar(50) not null,
     pass varchar(50) not null
 );
