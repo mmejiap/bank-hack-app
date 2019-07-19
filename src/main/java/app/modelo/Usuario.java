@@ -24,22 +24,22 @@ public class Usuario {
     private String email;
     @Column(name="direccion")
     private String direccion;
-    
-    private String password;
+    @Column(name="pass")
+    private String pass;
         
     public void setDni(String n){this.dni=n;}
     public void setNombre(String name){this.nombre=name;}
     public void setApellido(String surname) {this.apellido=surname;}
     public void setEmail(String em) {this.email=em;}
     public void setDireccion(String dir) {this.direccion=dir;}
-	public void setPassword(String password) {this.password = password;}
+	public void setPass(String password) {this.pass = password;}
     
     public String getDni(){return this.dni;}
     public String getNombre() {return this.nombre;}
     public String getApellido() {return this.apellido;}
     public String getEmail() {return this.email;}
     public String getDireccion() {return this.direccion;}
-	public String getPassword() {return password;}
+	public String getPass() {return this.pass;}
 
     
     
