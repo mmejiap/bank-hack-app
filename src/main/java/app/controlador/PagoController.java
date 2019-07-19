@@ -70,9 +70,9 @@ public class PagoController {
     @CrossOrigin
  	@GetMapping(path="/procesar")
  	public @ResponseBody String procesarPago(@RequestParam String ntarjeta) {
-         Tarjeta p = pagotarjeta.findById(ntarjeta).get();	
 
         try { 
+            Tarjeta p = pagotarjeta.findById(ntarjeta).get();	
      if(p.getNtarjeta()==null) {
     	 return "No se encontro la tarjeta";    	 
      }}catch(Exception e) {
