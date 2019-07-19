@@ -16,7 +16,7 @@ import app.repositorios.RepositorioPago;
 import app.repositorios.RepositorioServicios;
 
 @CrossOrigin
-@RestController    // Clase controlador
+@RestController    // Clase controasdcasdclador
 @RequestMapping(path="/servicios") 
 public class ServiciosController {
 	
