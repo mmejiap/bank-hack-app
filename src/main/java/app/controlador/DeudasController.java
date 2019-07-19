@@ -41,7 +41,7 @@ public class DeudasController {
         ArrayList<Deudas> listDeudas = new ArrayList<Deudas>();
         System.out.println("--->numDni:"+numDni);
         for(Deudas p:listaDeu) {
-        	if(p.getFdni()==numDni) {
+        	if(p.getFdni().equals(numDni)) {
         		listDeudas.add(p);
         	}
         }
