@@ -27,7 +27,8 @@ public class UsuarioController {
 	/////////////////////////////
 	@CrossOrigin
 	@GetMapping(path="/validaUsuario")
-	public @ResponseBody int validaUsuario(@RequestParam String numDni,
+	@ResponseBody
+	public int validaUsuario(@RequestParam String numDni,
 												@RequestParam String password
 			) {
 		System.out.println("-->Dni:"+numDni+"-> pass: "+password);
