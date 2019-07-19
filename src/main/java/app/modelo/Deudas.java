@@ -2,6 +2,7 @@ package app.modelo;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,8 +14,11 @@ import javax.persistence.Table;
 public class Deudas {
 	  @Id
 	  @GeneratedValue(strategy=GenerationType.IDENTITY)
+	  @Column(name="iddeuda")
 	  private int iddeuda;	
+	  @Column(name="fdni")
 	  private String fdni;
+	  @Column(name="fidservicio")
 	  private String fidservicio;
 	  private BigDecimal montodeuda;
 	public int getIddeuda() {

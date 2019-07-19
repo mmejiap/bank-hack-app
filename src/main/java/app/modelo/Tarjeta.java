@@ -3,6 +3,7 @@ package app.modelo;
 import java.math.BigDecimal;
 import java.sql.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,13 +12,21 @@ import javax.persistence.Table;
 @Table(name="tarjeta")
 public class Tarjeta {
 	@Id
+	@Column(name="ntarjeta")
 	private String ntarjeta;
+	@Column(name="tipotarjeta")
 	private String tipotarjeta;
+	@Column(name="fechavencimiento")
 	private Date fechavencimiento;
+	@Column(name="cvv")
 	private Integer cvv;
+	@Column(name="ncuenta")
 	private String ncuenta;
+	@Column(name="montototal")
 	private BigDecimal montototal;
+	@Column(name="saldo")
 	private BigDecimal saldo;
+	@Column(name="fdni")	
 	private String  fdni;
 	public String getNtarjeta() {
 		return ntarjeta;
