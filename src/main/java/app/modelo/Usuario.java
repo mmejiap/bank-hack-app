@@ -1,5 +1,6 @@
 package app.modelo;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,10 +14,15 @@ public class Usuario {
 	
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="dni")
     private String dni;
+    @Column(name="nombre")
     private String nombre;
+    @Column(name="apellido")
     private String apellido;
+    @Column(name="email")
     private String email;
+    @Column(name="direccion")
     private String direccion;
     
     private String password;
