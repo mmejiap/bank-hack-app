@@ -34,6 +34,7 @@ public class UsuarioController {
 		System.out.println("-->Dni:"+numDni+"-> pass: "+password);
 		try{
 			Optional<Usuario> u =  usuarioRepo.findById(numDni);
+			System.out.println("UUUUUU-->Dni:"+u.get().getDni()+"-> pass: "+u.get().getPass());
 			if(u.get().getPass()==password) {
 				return "si";
 			}else
