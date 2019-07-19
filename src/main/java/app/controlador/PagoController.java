@@ -15,7 +15,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import app.modelo.Pago;
+import app.modelo.Tarjeta;
+
 import app.repositorios.RepositorioPago;
+import app.repositorios.RepositorioTarjeta;
 
 @CrossOrigin
 @RestController    // Clase controlador
@@ -23,6 +26,8 @@ import app.repositorios.RepositorioPago;
 public class PagoController {
     @Autowired
 	private RepositorioPago pagorepo;
+	private RepositorioTarjeta pagotarjeta;
+
     @CrossOrigin
     @PostMapping(path="/insertar") // Map SOLO GET 
 	public @ResponseBody String agregarPermiso (@RequestParam int id,
@@ -38,7 +43,7 @@ public class PagoController {
     }
     @CrossOrigin
     @GetMapping(path="/listar")
-	public @ResponseBody Iterable<Pago> listarPermisos(@RequestParam String ftarjeta) {
+	public @ResponseBody Iterable<Pago> listarPago(@RequestParam String ftarjeta) {
         Iterable<Pago> listaPag = pagorepo.findAll();
         ArrayList<Pago> listPagos = new ArrayList<Pago>();
      
@@ -51,7 +56,7 @@ public class PagoController {
     }
     @CrossOrigin
 	@PostMapping(path="/modificar")
-	public @ResponseBody String modificarPermiso(@RequestParam int id,
+	public @ResponseBody String modificarPago(@RequestParam int id,
 			                                     @RequestParam String ftarjeta,
 		                                       	 @RequestParam String fdeuda,
 			                                     @RequestParam Date fechapago) {
@@ -62,5 +67,20 @@ public class PagoController {
         p.setFechapago(fechapago);
         return "Modificado";
     }   
+    @CrossOrigin
+ 	@PostMapping(path="/procesar")
+ 	public @ResponseBody String procesarPago(@RequestParam int ntarjeta,
+ 			                                     @RequestParam String tipotarjeta,
+ 		                                       	 @RequestParam String cvv,
+ 			                                     @RequestParam String fdni,
+ 			                                     @RequestParam String fechavencimiento) {
+         Tarjeta p = pagotarjeta.findById(ntarjeta).get();	
+     if(p.getNtarjeta()==null) {
+    	 return "No se encontro la tarjeta";    	 
+     }
+      
+         return "Si existe tarjeta";
+     } 
+    
 
 }
