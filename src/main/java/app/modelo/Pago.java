@@ -3,14 +3,27 @@ package app.modelo;
 import java.sql.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity // This tells Hibernate to make a table out of this class
 @Table(name="pago")
 public class Pago {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
 	private String ftarjeta;
 	private String fdeuda;
 	private Date fechapago;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getFtarjeta() {
 		return ftarjeta;
 	}
@@ -31,7 +44,9 @@ public class Pago {
 	}
 	@Override
 	public String toString() {
-		return "Pago [ftarjeta=" + ftarjeta + ", fdeuda=" + fdeuda + ", fechapago=" + fechapago + "]";
+		return "Pago [id=" + id + ", ftarjeta=" + ftarjeta + ", fdeuda=" + fdeuda + ", fechapago=" + fechapago + "]";
 	}
 	
+	
 }
+
