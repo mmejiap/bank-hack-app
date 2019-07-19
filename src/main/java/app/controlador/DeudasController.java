@@ -1,5 +1,7 @@
 package app.controlador;
 
-public class DeudasController {
+import app.modelo.Deudas;
 
+public class DeudasController {
+	
 }
