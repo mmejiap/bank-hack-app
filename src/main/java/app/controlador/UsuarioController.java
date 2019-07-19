@@ -28,16 +28,16 @@ public class UsuarioController {
 	@CrossOrigin
 	@GetMapping("/validaUsuario")
 	@ResponseBody
-	public int validaUsuario(@RequestParam String numDni,
+	public String validaUsuario(@RequestParam String numDni,
 												@RequestParam String password
 			) {
 		System.out.println("-->Dni:"+numDni+"-> pass: "+password);
 		try{
 			Optional<Usuario> u =  usuarioRepo.findById(numDni);
 			if(u.get().getPass()==password) {
-				return 1;
+				return "si";
 			}else
-				return 0;
+				return "no";
 
 		}
 		catch(Exception e){
